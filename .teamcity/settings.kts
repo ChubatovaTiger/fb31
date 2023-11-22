@@ -57,22 +57,21 @@ object Build1 : BuildType({
             ))
         }
     }
-    requirements {
-        contains("teamcity.agent.name", "aaaaa")
-    }
+
   failureConditions {
         executionTimeoutMin = 1
     }
+
+})
+
+object Build2 : BuildType({
+    name = "build2"
     steps {
         script {
             id = "simpleRunner"
             scriptContent = "sleep 120"
         }
     }
-})
-
-object Build2 : BuildType({
-    name = "build2"
 })
 
 object Build3 : BuildType({
