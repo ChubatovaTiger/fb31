@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.matrix
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -58,6 +59,15 @@ object Build1 : BuildType({
     }
     requirements {
         contains("teamcity.agent.name", "aaaaa")
+    }
+  failureConditions {
+        executionTimeoutMin = 1
+    }
+    steps {
+        script {
+            id = "simpleRunner"
+            scriptContent = "sleep 120"
+        }
     }
 })
 
