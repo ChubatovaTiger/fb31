@@ -52,6 +52,10 @@ object Build1 : BuildType({
 
 object Build2 : BuildType({
     name = "build2"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
 })
 
 object Build3 : BuildType({
