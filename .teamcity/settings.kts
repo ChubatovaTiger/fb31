@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.matrix
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -53,4 +54,13 @@ object Build2 : BuildType({
 
 object Build3 : BuildType({
     name = "build3"
+
+    features {
+        matrix {
+            param("ex", listOf(
+                value("1"),
+                value("2")
+            ))
+        }
+    }
 })
