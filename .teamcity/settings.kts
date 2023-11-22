@@ -36,6 +36,8 @@ project {
 object Build1 : BuildType({
     name = "build1"
 
+    type = BuildTypeSettings.Type.COMPOSITE
+
     vcs {
         root(DslContext.settingsRoot)
 
