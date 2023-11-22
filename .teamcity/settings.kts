@@ -44,6 +44,10 @@ object Build1 : BuildType({
         showDependenciesChanges = true
     }
 
+    failureConditions {
+        executionTimeoutMin = 1
+    }
+
     dependencies {
         snapshot(Build2) {
             reuseBuilds = ReuseBuilds.NO
