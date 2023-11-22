@@ -35,7 +35,7 @@ project {
 object Build1 : BuildType({
     name = "build1"
 
-    type = BuildTypeSettings.Type.COMPOSITE
+    //type = BuildTypeSettings.Type.COMPOSITE
 
     vcs {
         root(DslContext.settingsRoot)
@@ -46,6 +46,14 @@ object Build1 : BuildType({
     dependencies {
         snapshot(Build2) {
             reuseBuilds = ReuseBuilds.NO
+        }
+    }
+    features {
+        matrix {
+            param("ex", listOf(
+                value("1"),
+                value("2")
+            ))
         }
     }
 })
