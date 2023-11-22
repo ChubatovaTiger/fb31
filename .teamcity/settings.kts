@@ -56,6 +56,9 @@ object Build1 : BuildType({
             ))
         }
     }
+    requirements {
+        contains("teamcity.agent.name", "aaaaa")
+    }
 })
 
 object Build2 : BuildType({
