@@ -28,6 +28,7 @@ project {
 
     buildType(Build2)
     buildType(Build1)
+    buildType(Build3)
 }
 
 object Build1 : BuildType({
@@ -48,4 +49,8 @@ object Build1 : BuildType({
 
 object Build2 : BuildType({
     name = "build2"
+})
+
+object Build3 : BuildType({
+    name = "build3"
 })
