@@ -38,6 +38,8 @@ object Build1 : BuildType({
     type = BuildTypeSettings.Type.COMPOSITE
 
     vcs {
+        root(DslContext.settingsRoot)
+
         showDependenciesChanges = true
     }
 
