@@ -72,6 +72,12 @@ object Build1 : BuildType({
 
 object Build2 : BuildType({
     name = "build2"
+    steps {
+        script {
+            id = "simpleRunner"
+            scriptContent = "sleep 120"
+        }
+    }
 
 })
 
